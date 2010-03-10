@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/rack/funky-cache.rb",
+     "rack-funky-cache.gemspec",
      "test/rack_funky_cache_test.rb",
      "test/test_helper.rb"
   ]
