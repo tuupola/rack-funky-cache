@@ -4,14 +4,15 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "rack_funky_cache"
+    gem.name = "rack-funky-cache"
     gem.summary = %Q{Funky caching for Rack based applications}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{Funky caching for Rack based applications}
     gem.email = "tuupola@appelsiini.net"
     gem.homepage = "http://github.com/tuupola/rack_funky_cache"
     gem.authors = ["Mika Tuupola"]
     gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.files.include %w(lib/rack/*)
   end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
