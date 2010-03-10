@@ -1,4 +1,4 @@
-= rack_funky_cache
+= rack-funky-cache
 
 Description goes here.
 

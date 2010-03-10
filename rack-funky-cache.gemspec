@@ -25,16 +25,16 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/rack/funky-cache.rb",
      "rack-funky-cache.gemspec",
-     "test/rack_funky_cache_test.rb",
+     "test/rack-funky-cache_test.rb",
      "test/test_helper.rb"
   ]
-  s.homepage = %q{http://github.com/tuupola/rack_funky_cache}
+  s.homepage = %q{http://github.com/tuupola/rack-funky-cache}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Funky caching for Rack based applications}
   s.test_files = [
-    "test/rack_funky_cache_test.rb",
+    "test/rack-funky-cache_test.rb",
      "test/test_helper.rb"
   ]
 

@@ -8,7 +8,7 @@ begin
     gem.summary = %Q{Funky caching for Rack based applications}
     gem.description = %Q{Funky caching for Rack based applications}
     gem.email = "tuupola@appelsiini.net"
-    gem.homepage = "http://github.com/tuupola/rack_funky_cache"
+    gem.homepage = "http://github.com/tuupola/rack-funky-cache"
     gem.authors = ["Mika Tuupola"]
     gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
@@ -51,7 +51,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "rack_funky_cache #{version}"
+  rdoc.title = "rack-funky-cache #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
