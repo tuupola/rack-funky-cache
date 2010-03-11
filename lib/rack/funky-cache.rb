@@ -19,7 +19,7 @@ module Rack
     def cache(env, response)
       path = Rack::Utils.unescape(env["PATH_INFO"])
             
-      if path.end_with?("/")
+      if path[-1, 1] == "/"
         path = ::File.join(path, "index.html")
       else
         path << '.html'         
