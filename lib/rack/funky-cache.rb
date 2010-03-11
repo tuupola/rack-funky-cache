@@ -18,16 +18,17 @@ module Rack
     
     def cache(env, response)
       path = Rack::Utils.unescape(env["PATH_INFO"])
+            
       if path.end_with?("/")
-        ::File.join(path, "index.html")
+        path = ::File.join(path, "index.html")
       else
         path << '.html'         
-      end
-      
+      end      
+        
       basename  = ::File.basename(path)
       dirname   = ::File.join(@settings[:directory], ::File.dirname(path))
       cachefile = ::File.join(dirname, basename)
-      
+
       FileUtils.mkdir_p(dirname) unless ::File.directory?(dirname)
       ::File.open(cachefile, "w") do |file|
         response[2].each do |string| 
