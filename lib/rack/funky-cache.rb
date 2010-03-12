@@ -30,11 +30,14 @@ module Rack
       cachefile = ::File.join(dirname, basename)
 
       FileUtils.mkdir_p(dirname) unless ::File.directory?(dirname)
-      ::File.open(cachefile, "w") do |file|
-        response[2].each do |string| 
-          file.write(string)
+      unless ::File.exists?(cachefile)
+        ::File.open(cachefile, "w") do |file|
+          response[2].each do |string| 
+            file.write(string)
+          end
         end
       end
+      
     end
     
     def should_cache(env, response)
