@@ -11,6 +11,10 @@ module Rack
     end
 
     def call(env)
+      dup._call(env)
+    end
+    
+    def _call(env)
       response = @app.call(env)
       cache(env, response) if should_cache(env, response)
       response
