@@ -47,7 +47,7 @@ module Rack
     def should_cache(env, response)
       request = Rack::Request.new(env)
       request.get? && request.query_string.empty? && 
-        "text/html" == response[1]['Content-Type'] && 200 == response[0]
+        /text\/html/ =~ response[1]["Content-Type"] && 200 == response[0]
     end
         
   end
