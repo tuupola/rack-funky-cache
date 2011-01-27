@@ -2,6 +2,10 @@
 
 Rack middleware for funky caching content. When request is first served by Rack it is written to disk as static html file. All subsequent requests are then served by webserver and they never reach Rack.
 
+== Install
+
+  $ sudo gem install rack-funky-cache
+  
 == Copyright
 
-Copyright (c) 2010 Mika Tuupola. See LICENSE for details.
+Copyright (c) 2010-2011 Mika Tuupola. See LICENSE for details.
