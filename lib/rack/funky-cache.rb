@@ -5,10 +5,12 @@ module Rack
 
   class FunkyCache
     
-    def initialize(app, settings)
+    def initialize(app, settings={})
       @app = app       
-      @settings = settings
-    end
+      @settings  = settings
+      @root      = settings[:root] || Dir.pwd
+      @path      = settings[:path] || "/public"
+      @directory = settings[:directory] || ::File.join(@root, @path)    end
 
     def call(env)
       dup._call(env)
@@ -30,7 +32,7 @@ module Rack
       end      
         
       basename  = ::File.basename(path)
-      dirname   = ::File.join(@settings[:directory], ::File.dirname(path))
+      dirname   = ::File.join(@directory, ::File.dirname(path))
       cachefile = ::File.join(dirname, basename)
 
       FileUtils.mkdir_p(dirname) unless ::File.directory?(dirname)
