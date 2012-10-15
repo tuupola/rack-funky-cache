@@ -8,4 +8,4 @@ Rack middleware for funky caching content. When request is first served by Rack 
   
 == Copyright
 
-Copyright (c) 2010-2011 Mika Tuupola. See LICENSE for details.
+Copyright (c) 2010-2012 Mika Tuupola. See LICENSE for details.
