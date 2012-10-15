@@ -1,10 +1,11 @@
 require 'rubygems'
+require 'rack/test'
 require 'test/unit'
 require 'shoulda'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'rack-funky-cache'
+require 'rack/funky-cache'
 
 class Test::Unit::TestCase
 end
