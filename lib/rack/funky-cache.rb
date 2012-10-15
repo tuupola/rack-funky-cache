@@ -13,15 +13,11 @@ module Rack
       @directory = settings[:directory] || ::File.join(@root, @path)    end
 
     def call(env)
-      dup._call(env)
-    end
-    
-    def _call(env)
       response = @app.call(env)
       cache(env, response) if should_cache(env, response)
       response
     end
-    
+        
     def cache(env, response)
       path = Rack::Utils.unescape(env["PATH_INFO"])
             
@@ -47,9 +43,15 @@ module Rack
     end
     
     def should_cache(env, response)
-      request = Rack::Request.new(env)
-      request.get? && request.query_string.empty? && 
-        /text\/html/ =~ response[1]["Content-Type"] && 200 == response[0]
+      unless env_excluded?(env)
+        request = Rack::Request.new(env)
+        request.get? && request.query_string.empty? &&
+          /text\/html/ =~ response[1]["Content-Type"] && 200 == response[0]
+      end
+    end
+
+    def env_excluded?(env)
+      @settings[:exclude] && @settings[:exclude].call(env)
     end
         
   end
